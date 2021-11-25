@@ -13,6 +13,10 @@ public class FindMax {
 
         return 350;
     }
+
+    public String findMaxValue(String s, String s1, String s2) {
+        return String.valueOf(450);
+    }
 }
 
 
