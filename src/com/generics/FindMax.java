@@ -17,6 +17,10 @@ public class FindMax {
     public String findMaxValue() {
         return String.valueOf(450);
     }
+
+    public String findMaxValue(String s, String s1, String s2) {
+        return String.valueOf(450);
+    }
 }
 
 

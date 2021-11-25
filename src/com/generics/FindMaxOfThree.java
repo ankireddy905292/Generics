@@ -1,41 +1,22 @@
 package com.generics;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+public class FindMaxOfThree{
 
 /*
- * Generic Class To Find Max Values
- */
-public class FindMaxOfThree<E extends Comparable<E>> {
-    //Array of Generic values
-    E[] values;
-    //List of Generic Values
-    List<E> listValues = new LinkedList<>();
-
-    //Constructor to Initialize Generic Array
-    public FindMaxOfThree(E[] values) {
-        this.values = values;
-    }
-
-    //Constructor to Initialize Generic List
-    public FindMaxOfThree(List<E> listValues) {
-        this.listValues = listValues;
-    }
-
-    //Method to Find  Max Value From List
-    public E findMax() {
-        return Collections.max(listValues);
-    }
-
-    //Method to Find Max Value Form Array
-    public E findMaxValue() {
-        if (values[0].compareTo(values[1]) > 0 && values[0].compareTo(values[2]) > 0) {
-            return values[0];
-        } else if (values[1].compareTo(values[0]) > 0 && values[1].compareTo(values[2]) > 0) {
-            return values[1];
-        } else {
-            return values[2];
+ * Generic Method to Find the Max Value of passed Arguments
+ **/
+public <E extends Comparable> E findMaxValue(E firstValue, E secondValue, E thirdValue){
+        E max = firstValue;
+        if (secondValue.compareTo(max) > 0) {
+        max = secondValue;
         }
-    }
-}
+        if (thirdValue.compareTo(max) > 0) {
+        max = thirdValue;
+        }
+        printMax(max);
+        return max;
+        }
+public <E> void printMax(E max){
+        System.out.println("Max Value = "+max);
+        }
+        }
