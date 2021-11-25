@@ -18,6 +18,7 @@ public class FindMaxTest {
         findMax = new FindMax();
     }
 
+
     @Test
     public void givenFirstNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
         Integer max = findMax.findMaxValue(200, 25, 105);
@@ -34,5 +35,22 @@ public class FindMaxTest {
     public void givenThirdNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
         Integer max = findMax.findMaxValue(35, 110, 215);
         Assert.assertEquals((Integer) 215, max);
+    }
+    @Test
+    public void givenFirstFloatNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
+        Integer max = findMax.findMaxValue(350f, 110f, 215f);
+        Assert.assertEquals((Float) 350f, max);
+    }
+
+    @Test
+    public void givenSecondFloatNumberAsLarge_ShouldReturn_SecondNumberAsMax() {
+        Float max = Float.valueOf(findMax.findMaxValue(35f, 110f, 25f));
+        Assert.assertEquals((Float) 110f, max);
+    }
+
+    @Test
+    public void givenThirdFloatNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
+        Float max = Float.valueOf(findMax.findMaxValue(350f, 110f, 450f));
+        Assert.assertEquals((Float) 450f, max);
     }
 }
