@@ -1,52 +1,41 @@
 package com.generics;
 
-public class FindMaxOfThree {
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
+/*
+ * Generic Class To Find Max Values
+ */
+public class FindMaxOfThree<E extends Comparable<E>> {
+    //Array of Generic values
+    E[] values;
+    //List of Generic Values
+    List<E> listValues = new LinkedList<>();
 
-    public Integer findMaxValue(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
-        Integer max = firstNumber;
-        if (secondNumber.compareTo(max) > 0) {
-            max = secondNumber;
-        }
-        if (thirdNumber.compareTo(max) > 0) {
-            max = thirdNumber;
-        }
-        printMax(max);
-        return max;
-    }
-    public Float findMaxValue(Float firstNumber, Float secondNumber, Float thirdNumber) {
-        Float max = firstNumber;
-        if (secondNumber.compareTo(max) > 0) {
-            max = secondNumber;
-        }
-        if (thirdNumber.compareTo(max) > 0) {
-            max = thirdNumber;
-        }
-        printMax(max);
-        return max;
+    //Constructor to Initialize Generic Array
+    public FindMaxOfThree(E[] values) {
+        this.values = values;
     }
 
-    public String findMaxValue(String firstNumber, String secondNumber, String thirdNumber) {
-        String max = firstNumber;
-        if (secondNumber.compareTo(max) > 0) {
-            max = secondNumber;
+    //Constructor to Initialize Generic List
+    public FindMaxOfThree(List<E> listValues) {
+        this.listValues = listValues;
+    }
+
+    //Method to Find  Max Value From List
+    public E findMax() {
+        return Collections.max(listValues);
+    }
+
+    //Method to Find Max Value Form Array
+    public E findMaxValue() {
+        if (values[0].compareTo(values[1]) > 0 && values[0].compareTo(values[2]) > 0) {
+            return values[0];
+        } else if (values[1].compareTo(values[0]) > 0 && values[1].compareTo(values[2]) > 0) {
+            return values[1];
+        } else {
+            return values[2];
         }
-        if (thirdNumber.compareTo(max) > 0) {
-            max = thirdNumber;
-        }
-        printMax(max);
-        return max;
-    }
-
-    private void printMax(Integer max) {
-        System.out.println("Largest = " + max);
-    }
-
-    private void printMax(Float max) {
-        System.out.println("Largest = " + max);
-    }
-
-    private void printMax(String max) {
-        System.out.println("Largest = " + max);
     }
 }
